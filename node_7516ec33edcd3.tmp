@@ -1,0 +1,31 @@
+var removeDuplicateLetters = function(s) {
+    const stack=[];
+    let pre='';
+    let count=s.length;
+    for(let i=0;i<count;i++){
+           if(s[i]>pre){
+               stack.push(s[i]);
+           }
+           else{
+               while(stack.length && stack[stack.length-1]>s[i]){
+                   for(let j=i+1;j<count;j++){
+                       if(s[j]==s[stack.length-1]){
+                           stack.pop();
+                       }else{
+                           continue;
+                       }
+                   }
+               }
+               stack.push(s[i]);
+               }
+               pre=s[i];
+           }
+    let str="";
+    while(stack.length){
+        str+=stack.shift();
+    }
+    return str;
+};
+  
+let str= "cbacdcbc";
+console.log(removeDuplicateLetters(str));
