@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-本地master.txt
-
-in ther marster branch
-
